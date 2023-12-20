@@ -1,22 +1,23 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import MyNav from './components/MyNav'
-import MyFooter from './components/MyFooter'
-import Welcome from './components/Welcome'
-import AllTheBooks from './components/AllTheBooks'
-import { Container } from 'react-bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <>
-      <MyNav />
-      <Container>
+import React, { Component } from "react";
+import MyNav from "./components/MyNav";
+import MyFooter from "./components/MyFooter";
+import Welcome from "./components/Welcome";
+import BookList from "./components/BookList";
+import fantasyBooks from "./data/fantasy.json";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <MyNav />
         <Welcome />
-        <AllTheBooks />
-      </Container>
-      <MyFooter />
-    </>
-  )
+        <BookList books={fantasyBooks} />
+        <MyFooter />
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;
